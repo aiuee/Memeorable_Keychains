@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Memeorable Keychains</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .hero-header {
+        background: url('Memeorable_Keychains_Header.jpeg') no-repeat;
+        background-position: 20% bottom; /* ← 左をカット：中央を右寄りにずらす */
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        position: relative;
+        margin: 0;
+      }
+
+
+
+    .header-overlay {
+      background-color: rgba(0, 0, 0, 0.4); /* 文字を読みやすくするためのオーバーレイ */
+      padding: 20px;
+      border-radius: 20px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+      }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #afeeee;
+      color: #333;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background-color: white;
+      width: 98%;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (min-width: 601px) {
+    .container {
+      width: 80%;
+      max-width: 700px;
+      padding: 25px;
+      }
+    }
+
+    /* 全体の文字サイズ調整 */
+    body {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 98%;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p, ul {
+        font-size: 17px;
+      }
+    }
+
+
+      header {
+        background-color: #6495ed;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 20px;
+        margin: 10px 0 20px 0;
+        color: white;
+      }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      background-color: #4169e1;
+      padding: 8px 14px;
+      border-radius: 20px;
+      margin: 0 5px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      background-color: #3b82f6;
+      color: black;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 40px;
+    }
+
+    h2 {
+      color: #4169e1;
+      border-bottom: 2px solid #87cefa;
+      padding-bottom: 5px;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    p, ul {
+      font-size: 24px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 40px;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    footer {
+      font-size: 14px;
+      background-color: #6495ed;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* モバイル最適化 */
+    @media screen and (max-width: 800px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 16px;
+        padding: 6px 8px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p, ul {
+        font-size: 16px;
+        padding: 0 5px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      footer {
+        font-size: 12px;
+        padding: 15px;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <header class="hero-header">
+  <div class="header-overlay">
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="products.html">🛍 Products</a>
+      <a href="contact.html">📍 Contact</a>
+    </nav>
+    <h1>About Us</h1>
+    <p class="subtitle">Get to know Memeorable Keychains!</p>
+  </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p><strong>"Memeorable Keychains"</strong> is a student-led project from the class "Kreativitas, Inovasi, dan Kewirausahaan." Our goal is to bring smiles and fun to people through our cute and quirky keychains and accessories.</p>
+
+      <h2>Our Mission</h2>
+      <ul>
+        <li>To offer fun and affordable keychains for all ages</li>
+        <li>To learn and practice real business and marketing skills</li>
+        <li>To express creativity and teamwork in every product</li>
+      </ul>
+
+      <h2>Our Team</h2>
+      <p>We are a group of international students working together to create, design, and sell products. Every item we create is crafted with teamwork and lots of love!</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Memeorable Keychains. All rights reserved.
+  </footer>
+
+</body>
+</html>
