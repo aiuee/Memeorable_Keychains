@@ -21,11 +21,31 @@
       font-size: 1.5em;
       text-align: center;
       padding: 20px;
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none; /* 表示前はクリックできないように */
     }
 
-.overlay-message {
-  max-width: 90%;
-}
+    .overlay-message {
+      max-width: 90%;
+    }
+
+    #close-overlay-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #333;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #close-overlay-button:hover {
+      background-color: #dddddd;
+    }
+
 
     .crying-cat {
       float: right;
@@ -228,8 +248,11 @@
   </style>
 </head>
 <body>
-  <div id="pc-mode-overlay" style="display: none;">
-    <div class="overlay-message">PCモードでお楽しみください。</div>
+
+  <div class="overlay-message">
+    For the best experience,<br>
+    please switch to desktop mode.<br><br>
+    <button id="close-overlay-button">Close</button>
   </div>
 
   <header class="hero-header">
@@ -270,27 +293,42 @@
 
   <!-- JavaScript -->
   <script>
-  // スマホ判定用関数
-  function isMobile() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  }
+    function isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
 
-  // スマホの場合にのみオーバーレイ表示
-  if (isMobile()) {
-    const overlay = document.getElementById("pc-mode-overlay");
-    overlay.style.display = "flex";
+    if (isMobile()) {
+      const overlay = document.getElementById("pc-mode-overlay");
 
-    // 5秒後に自動で非表示
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 5000);
+      // 一度表示（でも透明）
+      overlay.style.display = "flex";
 
-    // タップでも非表示に
-    overlay.addEventListener("click", () => {
-      overlay.style.display = "none";
-    });
-  }
-</script>
+      // 少し後にフェードイン
+      setTimeout(() => {
+        overlay.style.opacity = "1";
+        overlay.style.pointerEvents = "auto";
+      }, 100); // 100msくらい待ってから開始
+
+      // 5秒後に自動で非表示
+      setTimeout(() => {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }, 5000);
+
+      // タップでも非表示
+      overlay.addEventListener("click", () => {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      });
+
+      // 「閉じる」ボタンにも適用
+      document.getElementById("close-overlay-button").addEventListener("click", (e) => {
+        e.stopPropagation();
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      });
+    }
+  </script>
 
 </body>
 </html>
