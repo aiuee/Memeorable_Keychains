@@ -6,6 +6,7 @@
   <title>Memeorable Keychains</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* オーバーレイ */
     #pc-mode-overlay {
       position: fixed;
       top: 0;
@@ -23,7 +24,7 @@
       padding: 20px;
       opacity: 0;
       transition: opacity 1s ease;
-      pointer-events: none; /* 表示前はクリックできないように */
+      pointer-events: none;
     }
 
     .overlay-message {
@@ -46,7 +47,7 @@
       background-color: #dddddd;
     }
 
-
+    /* 画像 */
     .crying-cat {
       float: right;
       width: 200px;
@@ -61,19 +62,17 @@
       margin-bottom: 10px;
     }
 
-
     .scrolling-gif {
-      position: relative; 
-      left: 10px; 
-      bottom: 20px; 
-      width: 150px;  /* ← ここを調整 */
+      position: relative;
+      left: 10px;
+      bottom: 20px;
+      width: 150px;
       z-index: 1000;
     }
 
-
     .hero-header {
       background: url('Memeorable_Keychains_Header.jpeg') no-repeat;
-      background-position: 20% bottom; /* ← 左をカット：中央を右寄りにずらす */
+      background-position: 20% bottom;
       background-size: cover;
       color: white;
       text-align: center;
@@ -82,16 +81,14 @@
       margin: 0;
     }
 
-
-
     .header-overlay {
-      background-color: rgba(0, 0, 0, 0.4); /* 文字を読みやすくするためのオーバーレイ */
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 20px;
       border-radius: 20px;
       display: inline-block;
       backdrop-filter: blur(2px);
     }
-    
+
     * {
       box-sizing: border-box;
     }
@@ -110,6 +107,7 @@
       flex-direction: column;
       min-height: 100vh;
       font-size: 18px;
+      line-height: 1.7; /* 行間を広げる */
     }
 
     header {
@@ -168,7 +166,7 @@
 
     p, ol {
       font-size: 24px;
-      line-height: 1.6;
+      line-height: 1.7;
       max-width: 800px;
       margin: 0 auto 20px auto;
       text-align: center;
@@ -177,12 +175,10 @@
     ol {
       text-align: left;
       background-color: #f0f8ff;
-      padding: 20px;
+      padding: 20px 40px;
       border-radius: 10px;
       border-left: 6px solid #6495ed;
       font-size: 20px;
-      padding: 20px;
-      padding-left: 40px;
     }
 
     li {
@@ -198,49 +194,26 @@
       padding: 20px;
     }
 
+    /* モバイル対応：画像が重ならないようにする */
     @media screen and (max-width: 800px) {
-      .hero-header {
-        padding: 60px 10px;
-        background-position: center center;
-      }
-
-      .crying-cat,
-      .big-mouth-cat,
-      .scrolling-gif {
-        float: none;
-        display: block;
-        margin: 10px auto;
-        width: 80%; /* モバイルでは大きすぎないように */
-        max-width: 200px;
-      }
-
       body {
-        line-height: 1.6;
         font-size: 16px;
+        line-height: 1.8;
       }
 
       nav a {
         display: block;
-        margin: 6px 0;
-        font-size: 16px;
-        padding: 10px 14px;
+        margin: 8px 0;
+        font-size: 14px;
+        padding: 6px 10px;
       }
 
       h1 {
-        font-size: 24px;
-      }
-
-      .container {
-        width: 95%;
-        padding: 10px;
+        font-size: 28px;
       }
 
       .subtitle {
         font-size: 16px;
-      }
-
-      p, ol, li{
-        line-height: 1.8;
       }
 
       p, ol {
@@ -249,16 +222,13 @@
       }
 
       ol {
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 6px solid #6495ed;
-        font-size: 20px;
+        font-size: 16px;
         padding-left: 20px;
       }
 
       li {
         margin-bottom: 8px;
-        padding-left: 10px;      }
+      }
 
       .container {
         width: 98%;
@@ -268,6 +238,18 @@
       footer {
         font-size: 12px;
         padding: 15px;
+      }
+
+      /* ✅ 画像が重ならないように */
+      .crying-cat,
+      .big-mouth-cat,
+      .scrolling-gif {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 200px;
+        height: auto;
       }
     }
   </style>
@@ -283,17 +265,16 @@
   </div>
 
   <header class="hero-header">
-  <div class="header-overlay">
-    <nav>
-      <a href="products.html">🛍 Products</a>
-      <a href="about.html">👩‍💼 About Us</a>
-      <a href="contact.html">📍 Contact</a>
-    </nav>
-    <h1>Memeorable Keychains</h1>
-    <p class="subtitle">Welcome to our cute keychain shop!</p>
-  </div>
-
-</header>
+    <div class="header-overlay">
+      <nav>
+        <a href="products.html">🛍 Products</a>
+        <a href="about.html">👩‍💼 About Us</a>
+        <a href="contact.html">📍 Contact</a>
+      </nav>
+      <h1>Memeorable Keychains</h1>
+      <p class="subtitle">Welcome to our cute keychain shop!</p>
+    </div>
+  </header>
 
   <main>
     <div class="container">
@@ -313,12 +294,10 @@
     </div>
   </main>
 
-
   <footer>
     &copy; 2025 Memeorable Keychains. All rights reserved.
   </footer>
 
-  <!-- JavaScript -->
   <script>
     function isMobile() {
       return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -326,29 +305,23 @@
 
     if (isMobile()) {
       const overlay = document.getElementById("pc-mode-overlay");
-
-      // 一度表示（でも透明）
       overlay.style.display = "flex";
 
-      // 少し後にフェードイン
       setTimeout(() => {
         overlay.style.opacity = "1";
         overlay.style.pointerEvents = "auto";
-      }, 100); // 100msくらい待ってから開始
+      }, 100);
 
-      // 5秒後に自動で非表示
       setTimeout(() => {
         overlay.style.opacity = "0";
         overlay.style.pointerEvents = "none";
       }, 5000);
 
-      // タップでも非表示
       overlay.addEventListener("click", () => {
         overlay.style.opacity = "0";
         overlay.style.pointerEvents = "none";
       });
 
-      // 「閉じる」ボタンにも適用
       document.getElementById("close-overlay-button").addEventListener("click", (e) => {
         e.stopPropagation();
         overlay.style.opacity = "0";
