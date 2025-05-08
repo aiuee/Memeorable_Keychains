@@ -199,23 +199,48 @@
     }
 
     @media screen and (max-width: 800px) {
+      .hero-header {
+        padding: 60px 10px;
+        background-position: center center;
+      }
+
+      .crying-cat,
+      .big-mouth-cat,
+      .scrolling-gif {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        width: 80%; /* モバイルでは大きすぎないように */
+        max-width: 200px;
+      }
+
       body {
+        line-height: 1.6;
         font-size: 16px;
       }
 
       nav a {
         display: block;
-        margin: 8px 0;
-        font-size: 14px;
-        padding: 6px 10px;
+        margin: 6px 0;
+        font-size: 16px;
+        padding: 10px 14px;
       }
 
       h1 {
-        font-size: 28px;
+        font-size: 24px;
+      }
+
+      .container {
+        width: 95%;
+        padding: 10px;
       }
 
       .subtitle {
         font-size: 16px;
+      }
+
+      p, ol, li{
+        line-height: 1.8;
       }
 
       p, ol {
